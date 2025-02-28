@@ -6,10 +6,12 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_DATABASE: itsnick
-      MYSQL_USER: nick
-      MYSQL_PASSWORD: Nick@2025
-      MYSQL_ROOT_PASSWORD: 12312345
+      - MYSQL_DATABASE=itsnick
+      - MYSQL_USER=nick
+      - MYSQL_PASSWORD=Nick@2025
+      - MYSQL_ROOT_PASSWORD=12312345
+      - MYSQL_INITDB_SKIP_TZINFO=1
+      - TZ=Asia/Ho_Chi_Minh
     volumes:
       - ./mysql_data:/var/lib/mysql
       - ./my.cnf:/etc/mysql/conf.d/my.cnf  # Mount the custom my.cnf file
